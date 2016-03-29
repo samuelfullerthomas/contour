@@ -8,7 +8,6 @@
 var request = require('request')
 var fs = require('fs')
 var say = require('say')
-
 // ************************ START EDIT ************************************
 //  This is where you get your own api key! You can get it here:
 //  https://developers.google.com/maps/documentation/geocoding/get-api-key

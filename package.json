@@ -1,5 +1,9 @@
 {
   "name": "contour",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samuelfullerthomas/contour.git"
+  }
   "version": "1.0.0",
   "description": "Converts address to latitude and longitude via the Google geocoding api",
   "main": "Contour.js",
