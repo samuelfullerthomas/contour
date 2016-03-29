@@ -5,4 +5,4 @@ bootstrap:
 	@npm install
 
 start:
-	@node Contour.js
+	@node contour.js

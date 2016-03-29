@@ -5,7 +5,7 @@ This project lets you easily convert an array of addresses to latitude and longi
 ## Getting Started
 Clone the repo, cd into it, then run `make bootstrap`
 
-Jump into Contour and edit in your api key and array.
+Jump into contour.js and edit in your api key and array.
 
 You can get an api key [here](https://developers.google.com/maps/documentation/geocoding/get-api-key).  
 
