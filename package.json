@@ -1,0 +1,16 @@
+{
+  "name": "contour",
+  "version": "1.0.0",
+  "description": "Converts address to latitude and longitude via the Google geocoding api",
+  "main": "Contour.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Thomas",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.2",
+    "request": "^2.69.0",
+    "say": "^0.9.0"
+  }
+}
