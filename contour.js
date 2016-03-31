@@ -30,8 +30,10 @@ function getLatLong (arr, latArr, num, errorCount) {
     request('https://maps.googleapis.com/maps/api/geocode/json?address=' + arr[num].replace(/\s/g, '+') + '&key=' + apiKey, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         body = JSON.parse(body)
-        if (body && body.results && body.results[0] && body.results[0].geometry && body.results[0].geometry.location) {
-          latArr.push(body.results[0].geometry.location)
+        if (body && body.results && body.results[0] && body.results[0].formatted_address && body.results[0].geometry && body.results[0].geometry.location) {
+          var obj = body.results[0].geometry.location
+          obj.formatted_address = body.results[0].formatted_address
+          latArr.push(obj)
         } else {
           //  logs out any addresses that couldn't be looked up and didn't throw an error, for whatever reason
           var errorMessage = 'Error on ' + arr[num] + '. Error message as follows: "' + body.error_message + '"'
