@@ -8,21 +8,10 @@
 var request = require('request')
 var fs = require('fs')
 var say = require('say')
-// ************************ START EDIT ************************************
-//  This is where you get your own api key! You can get it here:
-//  https://developers.google.com/maps/documentation/geocoding/get-api-key
+var config = require('./config')
 
-var apiKey = 'Get a key! It is fun and easy'
-
-//  Put your array just here, where the current test array is. You can do it!
-//  we believe in you!
-
-var addressesArray = ['28 E 28th St, New York, NY 10016',
-'35 King Street London WC2E 8JG UK',
-'230 W. Superior Street, Chicago IL 60654 USA']
-
-//  That's it! That is the end of the things you need to edit!
-// ************************ END EDIT ************************************
+var apiKey = config.apiKey
+var addressesArray = config.addresses
 
 if (apiKey === 'Get a key! It is fun and easy') {
   say.speak('Victoria', 'Please, get an API key, insert it into the file, then try again', 1)
