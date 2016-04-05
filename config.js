@@ -3,7 +3,7 @@ module.exports = {
     This is where you get your own api key! You can get it here:
     https://developers.google.com/maps/documentation/geocoding/get-api-key
   */
-  'apiKey': 'AIzaSyDlYIpPtsWLruhpjfiuDzMbuJbf7_v1rso',
+  'apiKey': 'xxxxxxxxxxxxxxxxxx',
 
   /*
     Put your array just here, where the current test array is. You can do it!
