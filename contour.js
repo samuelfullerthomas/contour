@@ -8,21 +8,10 @@
 var request = require('request')
 var fs = require('fs')
 var say = require('say')
-// ************************ START EDIT ************************************
-//  This is where you get your own api key! You can get it here:
-//  https://developers.google.com/maps/documentation/geocoding/get-api-key
+var config = require('./config')
 
-var apiKey = 'Get a key! It is fun and easy'
-
-//  Put your array just here, where the current test array is. You can do it!
-//  we believe in you!
-
-var addressesArray = ['28 E 28th St, New York, NY 10016',
-'35 King Street London WC2E 8JG UK',
-'230 W. Superior Street, Chicago IL 60654 USA']
-
-//  That's it! That is the end of the things you need to edit!
-// ************************ END EDIT ************************************
+var apiKey = config.apiKey
+var addressesArray = config.addresses
 
 if (apiKey === 'Get a key! It is fun and easy') {
   say.speak('Victoria', 'Please, get an API key, insert it into the file, then try again', 1)
@@ -41,8 +30,10 @@ function getLatLong (arr, latArr, num, errorCount) {
     request('https://maps.googleapis.com/maps/api/geocode/json?address=' + arr[num].replace(/\s/g, '+') + '&key=' + apiKey, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         body = JSON.parse(body)
-        if (body && body.results && body.results[0] && body.results[0].geometry && body.results[0].geometry.location) {
-          latArr.push(body.results[0].geometry.location)
+        if (body && body.results && body.results[0] && body.results[0].formatted_address && body.results[0].geometry && body.results[0].geometry.location) {
+          var obj = body.results[0].geometry.location
+          obj.formatted_address = body.results[0].formatted_address
+          latArr.push(obj)
         } else {
           //  logs out any addresses that couldn't be looked up and didn't throw an error, for whatever reason
           var errorMessage = 'Error on ' + arr[num] + '. Error message as follows: "' + body.error_message + '"'
